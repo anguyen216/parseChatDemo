@@ -89,11 +89,78 @@
                     <connections>
                         <outlet property="passwordField" destination="T7G-aX-ASg" id="gng-4c-01l"/>
                         <outlet property="usernameField" destination="Cgd-VB-kxC" id="NyT-M9-QIL"/>
+                        <segue destination="I8F-nT-rLP" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="GTR-ZB-3vi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197.10144927536234" y="88.392857142857139"/>
+        </scene>
+        <!--Babble Log-->
+        <scene sceneID="dDj-Ae-cHz">
+            <objects>
+                <viewController id="ZmE-6B-uXU" customClass="chatViewController" customModule="parseChatDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cg8-hg-R4G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Drop a babble ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="31G-gs-tVs">
+                                <rect key="frame" x="10" y="98" width="324" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="sas-v1-VYT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxp-Ub-ZNQ">
+                                <rect key="frame" x="334" y="98" width="80" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="u0M-Ma-CMS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="ZmE-6B-uXU" eventType="touchUpInside" id="ReI-Xz-i41"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="68Z-DS-92c"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pxp-Ub-ZNQ" firstAttribute="leading" secondItem="31G-gs-tVs" secondAttribute="trailing" id="9rj-Di-0lV"/>
+                            <constraint firstAttribute="trailing" secondItem="Pxp-Ub-ZNQ" secondAttribute="trailing" id="EDj-h5-mJN"/>
+                            <constraint firstItem="68Z-DS-92c" firstAttribute="trailing" secondItem="31G-gs-tVs" secondAttribute="trailing" constant="80" id="Yg5-wN-yPI"/>
+                            <constraint firstItem="31G-gs-tVs" firstAttribute="top" secondItem="68Z-DS-92c" secondAttribute="top" constant="10" id="boA-MJ-5gc"/>
+                            <constraint firstItem="Pxp-Ub-ZNQ" firstAttribute="top" secondItem="68Z-DS-92c" secondAttribute="top" constant="10" id="fyF-QF-lBw"/>
+                            <constraint firstItem="31G-gs-tVs" firstAttribute="leading" secondItem="68Z-DS-92c" secondAttribute="leading" constant="10" id="gxq-We-6Sn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Babble Log" id="g5K-Yq-saH"/>
+                    <connections>
+                        <outlet property="chatMessageField" destination="31G-gs-tVs" id="o7K-It-YZB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gjF-Y1-kvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682.608695652174" y="87.723214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AJR-Jd-TsF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I8F-nT-rLP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ffB-3g-wZV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZmE-6B-uXU" kind="relationship" relationship="rootViewController" id="qH8-EH-LfV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buc-8V-CUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743" y="88"/>
         </scene>
     </scenes>
     <resources>

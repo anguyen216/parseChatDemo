@@ -45,10 +45,11 @@ class LoginViewController: UIViewController {
 
         PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
              if let error = error {
-               print("User log in failed: \(error.localizedDescription)")
+                print("User log in failed: \(error.localizedDescription)")
              } else {
-               print("User logged in successfully")
+                print("User logged in successfully")
                // display view controller that needs to shown after successful login
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
              }
           }
     }
